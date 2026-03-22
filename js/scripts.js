@@ -128,5 +128,41 @@ function applyHoverEffect(className) {
 applyHoverEffect('.zoom');
 applyHoverEffect('.play');
 
+/* MOBILE NAV */
+(function () {
+  const toggle = document.getElementById('nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (!toggle || !mobileNav) return;
+
+  function openNav() {
+    document.body.classList.add('nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeNav() {
+    document.body.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleNav() {
+    document.body.classList.contains('nav-open') ? closeNav() : openNav();
+  }
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    toggleNav();
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!document.body.classList.contains('nav-open')) return;
+    if (mobileNav.contains(e.target) || toggle.contains(e.target)) return;
+    closeNav();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+})();
+
 });
 // END

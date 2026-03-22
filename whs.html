@@ -19,54 +19,67 @@
 	<header id="navtop">
 		<div class="fleft">
 			<h3>
-				Ken Wise | Bruce Hillman | Lon Stratton
+				Ken Wise | Bruce Hillman | Lon Stratton 
 			</h3>
 		</div>
-		<nav class="fright">
+		<nav class="fright mq2-none">
 			<h4>
-				Lost
+				Lost 
 			</h4>
 			<ul>
-			<li><a href="/mhs">Madeira High School</a></li>
-			<li><a href="/imperials">The Imperials</a></li>
-			<li><a href="/rainbowsend">Rainbows End</a></li>
+				<li><a href="/mhs">Madeira High School</a></li>
+				<li><a href="/imperials">The Imperials</a></li>
+				<li><a href="/rainbowsend">Rainbows End</a></li>
 			</ul>
-		<ul>
-			<li><a href="/jazzbackgrounds">Jazz Backgrounds</a></li>
-			<li><a href="lessel.html">Lessel | Stratton</a></li>
-			<li><a href="/">INDEX</a></li>
-		</ul>
+			<ul>
+				<li><a href="/jazzbackgrounds">Jazz Backgrounds</a></li>
+				<li><a href="lessel.html">Lessel | Stratton</a></li>
+				<li><a href="/">INDEX</a></li>
+			</ul>
 		</nav>
-		</header>
-		<div class="works-page grid-wrap">
-			<div class="grid col-full">
+		<button id="nav-toggle" class="mq2-only" type="button" aria-expanded="false" aria-controls="mobile-nav"> <span class="nav-toggle-icon"></span> <span class="nav-toggle-icon"></span> <span class="nav-toggle-icon"></span> </button> 
+		<nav id="mobile-nav">
+			<ul>
+				<li class="navactive">Lost</li>
+				<li><a href="/mhs">Madeira High School</a></li>
+				<li><a href="/imperials">The Imperials</a></li>
+				<li><a href="/rainbowsend">Rainbows End</a></li>
+				<li><a href="/jazzbackgrounds">Jazz Backgrounds</a></li>
+				<li><a href="lessel.html">Lessel | Stratton</a></li>
+				<li><a href="/">INDEX</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="works-page grid-wrap">
+		<div class="grid col-full">
 			<hr>
-				<figure class="grid col-one-half mq3-col-full">
-					<figcaption>
-						<p>
-							Lost 
-						</p>
-					</figcaption>
-					<audio controls>
-						<source src="https://music.lonstratton.com/music/whs/lost.mp3"> 
-					</audio>
-					</figure>
-					<figure class="grid col-full">
+			<figure class="grid col-one-half mq3-col-full">
+				<figcaption>
 					<p>
-						<span style="font-size:.9em; font-weight:bolder; color:#C00;"> Around 1970 - 1971 </span> 
+						Lost 
 					</p>
-				</figure>
-			</div>
-			<footer class="grid col-full">
-				<div class="grid col-full divide-top">
-					<p>
-			<span style="font-size:1.1em; font-weight:bolder;"> Contact info: 
-			<a href="mailto:lon@stratton.contact?subject=Inquiry%20from%20WHS%20page">email</a> or 248.613.2049 </span>
-		</p>
-				</div>
-			</footer>
+				</figcaption>
+				<audio controls>
+					<source src="https://music.lonstratton.com/music/whs/lost.mp3"> 
+				</audio>
+			</figure>
+			<figure class="grid col-full">
+				<p>
+					<span style="font-size:.9em; font-weight:bolder; color:#C00;"> Around 1970 - 1971 </span> 
+				</p>
+			</figure>
 		</div>
+		<footer class="grid col-full">
+			<div class="grid col-full divide-top">
+				<p>
+					<span style="font-size:1.1em; font-weight:bolder;"> Contact info: <a href="mailto:lon@stratton.contact?subject=Inquiry%20from%20WHS%20page">email</a> or 248.613.2049 </span> 
+				</p>
+			</div>
+		</footer>
+	</div>
 </div>
 <script>document.addEventListener("play",function(e){document.querySelectorAll("audio").forEach(audio=>{const fig=audio.closest("figure");if(audio!==e.target){audio.pause();audio.currentTime=0;fig&&fig.classList.remove("is-playing")}});const currentFigure=e.target.closest("figure");currentFigure&&currentFigure.classList.add("is-playing")},!0);document.addEventListener("pause",function(e){const fig=e.target.closest("figure");fig&&fig.classList.remove("is-playing")},!0)</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

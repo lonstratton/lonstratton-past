@@ -313,6 +313,11 @@
  .fleft {
      float:left 
 }
+.fleft img {
+    width: clamp(250px, 35vw, 475px);
+    height: auto;
+    display: block;
+}
  .alignleft {
      float: left;
      clear: left;
@@ -353,6 +358,7 @@
      margin-bottom: 1em;
      clear: both;
      overflow: hidden;
+     display: flow-root;
 }
  header nav ul {
      float: left;
@@ -596,6 +602,11 @@
     }
      .mq2-none {
          display: none;
+    }
+    .fleft {
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem 0;
     }
      header#navtop {
          position: relative;

@@ -128,6 +128,8 @@ function applyHoverEffect(className) {
 applyHoverEffect('.zoom');
 applyHoverEffect('.play');
 
+});  /* closes $(document).ready(function () { */
+
 /* MOBILE NAV */
 (function () {
   const toggle = document.getElementById('nav-toggle');
@@ -164,5 +166,38 @@ applyHoverEffect('.play');
   });
 })();
 
-});
-// END
+/* ====================================================
+   THEME TOGGLE
+   ==================================================== */
+(function () {
+  const buttons = document.querySelectorAll('.theme-toggle');
+  if (!buttons.length) return;
+
+  const saved = localStorage.getItem('theme');
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  if (saved === 'dark') {
+    document.body.classList.add('dark-mode');
+  } else if (saved === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const isDark =
+        document.body.classList.contains('dark-mode') ||
+        (!document.body.classList.contains('light-mode') &&
+         systemDark.matches);
+
+      if (isDark) {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  });
+})();

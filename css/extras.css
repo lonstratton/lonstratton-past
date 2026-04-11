@@ -178,11 +178,20 @@ h6 {
   font-weight: normal;
 }
 h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 400;
   letter-spacing: -0.04em;
   line-height: 1;
   color: #000;
+}
+.site-title {
+  font-size: 2.5em;
+  font-weight: 400;
+}
+.site-title .title-light {
+  font-weight: 100;
+  letter-spacing: -0.02em;
+  padding-right: 0.1em;
 }
 .h1-sub {
   font-size: 0.8rem;
@@ -190,7 +199,7 @@ h1 {
   margin: 0.2em;
   font-weight: 500;
   color: #616161;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
 }
 h2 {

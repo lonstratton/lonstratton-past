@@ -362,6 +362,15 @@
 				</audio>
 			</figure>
 		</div>
+		<div class="grid col-full">
+		<hr>
+		<div class="video-thumb-wrap">	
+			<a onclick="openiframeModal('https://player.vimeo.com/video/1192007565?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479')">
+			<img src="img/jb-thumb.jpg" alt="Jazz Backgrounds video thumbnail"><span class="play"></span></a>
+			<p class="video-caption">
+				The trio at the 1982 Eastern Michigan University Jazz Festival.  Broadcast on WEMU radio.
+			</p>
+		</div>
 		<footer class="grid col-full">
 			<div class="grid col-full divide-top">
 				<p>
@@ -370,6 +379,10 @@
 			</div>
 		</footer>
 	</div>
+</div>
+<div id="iframeModal" class="modal">
+  <span class="close" onclick="closeiframeModal()">&times;</span>
+  <iframe id="modaliframe" allowfullscreen></iframe>
 </div>
 <script>document.addEventListener("play",function(e){document.querySelectorAll("audio").forEach(audio=>{const fig=audio.closest("figure");if(audio!==e.target){audio.pause();audio.currentTime=0;fig&&fig.classList.remove("is-playing")}});const currentFigure=e.target.closest("figure");currentFigure&&currentFigure.classList.add("is-playing")},!0);document.addEventListener("pause",function(e){const fig=e.target.closest("figure");fig&&fig.classList.remove("is-playing")},!0)</script>
 <script src="js/jquery.min.js"></script>
